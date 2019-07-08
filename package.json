@@ -1,0 +1,48 @@
+{
+  "name": "rahony",
+  "version": "1.0.0",
+  "description": "Rahony's website",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "run-p serve lint:watch",
+    "serve": "webpack-dev-server --config webpack.config.dev.js",
+    "lint": "esw webpack.config.* src --color",
+    "lint:watch": "yarn lint --watch",
+    "prebuild": "run-s clean-dist lint",
+    "build": "webpack --config webpack.config.prod.js",
+    "postbuild": "webpack-dev-server --config webpack.config.prod.js",
+    "clean-dist": "rimraf ./dist && mkdir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Confidence-Okoghenun/Rahony.git"
+  },
+  "author": "Confidence Okoghenun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Confidence-Okoghenun/Rahony/issues"
+  },
+  "homepage": "https://github.com/Confidence-Okoghenun/Rahony#readme",
+  "dependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "axios": "^0.19.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-latest": "^6.24.1",
+    "css-loader": "^3.0.0",
+    "eslint": "^6.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-watch": "^5.1.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "rimraf": "^2.6.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
